@@ -455,10 +455,10 @@ app.get("/", (request, response) => {
       birthCountry: "Dominican Republic",
     },
   ]);
-  app.listen(3000, function () {});
 });
 
 app.listen(3000, function () {
   console.log("hello world");
 });
 // type 'npm run start' in terminal to start server
+// type 'npx nodemon server.js' to constantly run server
