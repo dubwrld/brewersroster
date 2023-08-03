@@ -461,3 +461,4 @@ app.get("/", (request, response) => {
 app.listen(3000, function () {
   console.log("hello world");
 });
+// type 'npm run start' in terminal to start server
