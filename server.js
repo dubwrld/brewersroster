@@ -455,7 +455,7 @@ app.get("/", (request, response) => {
       birthCountry: "Dominican Republic",
     },
   ]);
-  app.listen(3001, function () {});
+  app.listen(3000, function () {});
 });
 
 app.listen(3001, function () {
