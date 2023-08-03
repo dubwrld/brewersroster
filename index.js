@@ -4,7 +4,7 @@ async function parseJson() {
   try {
     //Pulling in data from json using fetch
     //Converts data into array of objects using .json()
-    let brewersArray = await (await fetch("./brewersRosterArray.json")).json();
+    let brewersArray = await (await fetch("http://localhost:3001/")).json();
     console.log(brewersArray);
     // Sends the array of objects to display brewer players function
     displayBrewerPlayers(brewersArray);
