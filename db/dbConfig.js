@@ -7,7 +7,7 @@ const config = {
     trustServerCertificate: true,
     trustedConnection: false,
     enableArithAbort: true,
-    instancename: "SQLEXPRESS",
+    instanceName: "SQLEXPRESS",
   },
   port: 1433,
 };
