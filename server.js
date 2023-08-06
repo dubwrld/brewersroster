@@ -1,8 +1,17 @@
+const getData = require("dbOperations.js");
+let data;
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
+
+app.get("/data", (request, response) => {
+  getData().then((res) => {
+    data = res.recordset;
+  });
+  response.send(data);
+});
 
 app.get("/", (request, response) => {
   response.send([
