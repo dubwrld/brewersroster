@@ -1,4 +1,4 @@
-const { getData } = require("./db/dbOperations.js");
+const { getData, createData } = require("./db/dbOperations.js");
 let data;
 const express = require("express");
 const cors = require("cors");

@@ -1,5 +1,15 @@
 let cardContainer = document.getElementById("container");
 
+const displayData = async () => {
+  const grabData = async () => {
+    const data = await fetch("http://localhost:3000");
+    const dataJson = await data.json();
+    return dataJson;
+  };
+  const awaitedData = await grabData();
+  console.log(awaitedData);
+};
+
 async function parseJson() {
   try {
     //Pulling in data from json using fetch
