@@ -1,4 +1,4 @@
-const getData = require("dbOperations.js");
+const { getData } = require("./db/dbOperations.js");
 let data;
 const express = require("express");
 const cors = require("cors");
@@ -6,9 +6,9 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 
-app.get("/data", (request, response) => {
-  getData().then((res) => {
-    data = res.recordset;
+app.get("/data", async (request, response) => {
+  getData().then(async (res) => {
+    data = await res.recordset;
   });
   response.send(data);
 });
