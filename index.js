@@ -1,14 +1,23 @@
 let cardContainer = document.getElementById("container");
 
-const displayData = async () => {
-  const grabData = async () => {
-    const data = await fetch("http://localhost:3000");
-    const dataJson = await data.json();
-    return dataJson;
-  };
-  const awaitedData = await grabData();
-  console.log(awaitedData);
-};
+button.addEventListener("click", () => {
+  fetch("http://localhost:3000/data", { // youre fetching data directory
+    method: "POST", // and sending a post REQUEST
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      firstName: firstName.value,
+      lastName: lastName.value,
+    }),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      return data;
+    });
+});
 
 async function parseJson() {
   try {

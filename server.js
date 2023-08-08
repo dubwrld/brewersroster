@@ -1,16 +1,24 @@
 const { getData, createData } = require("./db/dbOperations.js");
 let data;
 const express = require("express");
+
 const cors = require("cors");
 
 const app = express();
 app.use(cors());
-
+app.use(express.json());
+app.use(express.urlencoded());
 app.get("/data", async (request, response) => {
   getData().then(async (res) => {
     data = await res.recordset;
   });
   response.send(data);
+});
+
+app.post("/data", (req, res) => {
+  // on POST, grab said request and createData using the body
+  console.log(req.body);
+  createData(req.body);
 });
 
 app.get("/", (request, response) => {
@@ -465,7 +473,9 @@ app.get("/", (request, response) => {
     },
   ]);
 });
-
+app.post("/", (request, response) => {
+  createData(request.body);
+});
 app.listen(3000, function () {
   console.log("hello world");
 });
